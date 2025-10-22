@@ -1,0 +1,21 @@
+services:
+  foom_lottery_indexer:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    build: .
+    environment:
+      - GIT_COMMIT=${GIT_COMMIT}
+      - IS_STAGING=${IS_STAGING}
+      - IS_ETH=${IS_ETH}
+      - AUTH_HEADER=${AUTH_HEADER}
+      - DATABASE_AUTH_URI=/etc/ssl/certs/X509-cert.pem
+    networks:
+      - hashup-ci_net-1
+    ports:
+      - '${HOST_PORT}:80'
+    volumes:
+      - /etc/ssl/certs/X509-cert-4837027008823509389.pem:/etc/ssl/certs/X509-cert.pem:ro
+      - /root/git/persistent_store/${WWW_VOLUME:-www}:/home/node/foom-lottery-indexer/www
+networks:
+  hashup-ci_net-1:
+    external: true

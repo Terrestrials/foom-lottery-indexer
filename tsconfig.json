@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+      "paths": {
+        "@foom-lottery-types": ["../foom-lottery-shared/types/index"],
+      },
+      "module": "NodeNext",
+      "types": ["node"],
+      "declaration": true,
+      "removeComments": true,
+      "moduleResolution": "NodeNext",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "allowSyntheticDefaultImports": true,
+      "target": "ESNext",
+      "sourceMap": true,
+      "outDir": "./build",
+      "baseUrl": "./",
+      "incremental": true,
+      "skipLibCheck": true,
+      "strictNullChecks": false,
+      "noImplicitAny": false,
+      "strictBindCallApply": false,
+      "forceConsistentCasingInFileNames": false,
+      "noFallthroughCasesInSwitch": false,
+      "esModuleInterop": true,
+      "useUnknownInCatchVariables": false,
+      "importsNotUsedAsValues": "remove"
+  },
+  "exclude": ["build", "node_modules"]
+}
